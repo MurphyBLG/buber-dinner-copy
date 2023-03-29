@@ -5,11 +5,6 @@ C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\De
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\BuberDinner.Api.runtimeconfig.json
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\BuberDinner.Api.dll
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\BuberDinner.Api.pdb
-C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
-C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\Microsoft.OpenApi.dll
-C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\BuberDinner.Application.dll
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\BuberDinner.Contracts.dll
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\bin\Debug\net7.0\BuberDinner.Domain.dll
@@ -23,7 +18,6 @@ C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\De
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\Debug\net7.0\BuberDinner.Api.AssemblyInfoInputs.cache
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\Debug\net7.0\BuberDinner.Api.AssemblyInfo.cs
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\Debug\net7.0\BuberDinner.Api.csproj.CoreCompileInputs.cache
-C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\Debug\net7.0\BuberDinner.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\Debug\net7.0\BuberDinner.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\Debug\net7.0\staticwebassets\msbuild.BuberDinner.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Murph\Documents\Programming-projects\BuberDinner\BuberDinner.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.BuberDinner.Api.props

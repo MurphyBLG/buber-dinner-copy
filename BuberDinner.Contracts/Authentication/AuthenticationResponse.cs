@@ -1,6 +1,6 @@
 ﻿namespace BuberDinner.Contracts.Authentication;
 
-public record AuthenticationRresponse(
+public record AuthenticationResponse(
     Guid Id,
     string FirstName,
     string Lastname,

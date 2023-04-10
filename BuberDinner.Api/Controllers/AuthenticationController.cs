@@ -15,16 +15,24 @@ public class AuthenticationController : Controller
         _authenticationService = authenticationService;
     }
 
-    [HttpPost("register")]
-    public IActionResult Register(RegisterRequest registerRequest)
+    [HttpPost("register-user")]
+    public IActionResult RegisterUser(RegisterUserRequest registerUserRequest)
     {
-        var authResult = _authenticationService.Register(
-            registerRequest.FirstName,
-            registerRequest.Lastname,
-            registerRequest.Email,
-            registerRequest.Password);
-
-        return Ok(authResult);
+        var authResult = _authenticationService.RegisterUser(
+            registerUserRequest.FirstName,
+            registerUserRequest.Lastname,
+            registerUserRequest.Email,
+            registerUserRequest.Password);
+        
+        AuthenticationResponse authResponse = new(
+            authResult.User.Id,
+            authResult.User.FirstName,
+            authResult.User.LastName,
+            authResult.User.Email,
+            authResult.Token
+        );
+        
+        return Ok(authResponse);
     }
 
     [HttpPost("login")]
@@ -33,7 +41,15 @@ public class AuthenticationController : Controller
         var authResult = _authenticationService.Login(
             loginRequest.Email,
             loginRequest.Password);
-
-        return Ok(authResult);
+        
+        AuthenticationResponse authResponse = new(
+            authResult.User.Id,
+            authResult.User.FirstName,
+            authResult.User.LastName,
+            authResult.User.Email,
+            authResult.Token
+        );
+        
+        return Ok(authResponse);
     }
 }

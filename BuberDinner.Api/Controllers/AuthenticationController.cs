@@ -1,10 +1,12 @@
-﻿using BuberDinner.Application.Services.Authentication;
+﻿using BuberDinner.Api.Filters;
+using BuberDinner.Application.Services.Authentication;
 using BuberDinner.Contracts.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BuberDinner.Api.Controllers;
 
 [ApiController]
+// [ErrorHandlingFilter] This variant is valid but there is better way
 [Route("/api/[controller]")]
 public class AuthenticationController : Controller
 {

@@ -1,12 +1,13 @@
 ﻿using BuberDinner.Application.Services.Authentication;
 using BuberDinner.Contracts.Authentication;
+using BuberDinner.Domain.Common.Errors;
 using Microsoft.AspNetCore.Mvc;
+using ErrorOr;
 
 namespace BuberDinner.Api.Controllers;
 
-[ApiController]
 [Route("/api/[controller]")]
-public class AuthenticationController : Controller
+public class AuthenticationController : ApiController
 {
     private readonly IAuthenticationService _authenticationService;
 
@@ -18,38 +19,41 @@ public class AuthenticationController : Controller
     [HttpPost("register-user")]
     public IActionResult RegisterUser(RegisterUserRequest registerUserRequest)
     {
-        var authResult = _authenticationService.RegisterUser(
+        ErrorOr<AuthenticationResult> authenticationResult = _authenticationService.RegisterUser(
             registerUserRequest.FirstName,
             registerUserRequest.Lastname,
             registerUserRequest.Email,
             registerUserRequest.Password);
-        
-        AuthenticationResponse authResponse = new(
-            authResult.User.Id,
-            authResult.User.FirstName,
-            authResult.User.LastName,
-            authResult.User.Email,
-            authResult.Token
-        );
-        
-        return Ok(authResponse);
+
+        return authenticationResult.Match(
+            authResult => Ok(MapAuthResult(authResult)),
+            errors => Problem(errors));
     }
 
     [HttpPost("login")]
     public IActionResult Login(LoginRequest loginRequest)
     {
-        var authResult = _authenticationService.Login(
+        var authenticationResult = _authenticationService.Login(
             loginRequest.Email,
             loginRequest.Password);
+
+        if (authenticationResult.IsError && authenticationResult.FirstError == Errors.Authentication.InvalidCredentials)
+            return Problem(statusCode: StatusCodes.Status401Unauthorized,
+                title: authenticationResult.FirstError.Description);
         
-        AuthenticationResponse authResponse = new(
+        return authenticationResult.Match(
+            authResult => Ok(MapAuthResult(authResult)),
+            errors => Problem(errors));
+    }
+    
+    private static AuthenticationResponse MapAuthResult(AuthenticationResult authResult)
+    {
+        return new AuthenticationResponse(
             authResult.User.Id,
             authResult.User.FirstName,
             authResult.User.LastName,
             authResult.User.Email,
             authResult.Token
         );
-        
-        return Ok(authResponse);
     }
 }

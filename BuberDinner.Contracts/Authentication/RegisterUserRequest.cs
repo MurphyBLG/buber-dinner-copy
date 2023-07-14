@@ -2,6 +2,6 @@
     
 public record RegisterUserRequest(
     string FirstName,
-    string Lastname,
+    string LastName,
     string Email,
     string Password);

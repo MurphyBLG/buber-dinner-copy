@@ -20,7 +20,7 @@ public static class DependencyInjection
 
         // 1st parameter says: take a class that implements IPipelineBehavior<,>
         // 2nd parameter says: take specific class which implements interface in first parameter
-        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidateBehavior<,>));
+        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
         // Searches every class that implements IValidator?
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         return services;
